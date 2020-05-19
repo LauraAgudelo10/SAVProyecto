@@ -3,7 +3,7 @@ require_once 'conexion.php';
 $con = new Conexion();
 $consulta = $con->conectar();
 $consulta->set_charset("utf8");
-$resultado=$consulta->query("SELECT * FROM tb_usuario");
+$resultado=$consulta->query("SELECT * FROM usuario");
 
 $usu="";
 $cla="";
@@ -18,11 +18,11 @@ if(isset($_POST['usuario'])){
     }else if($cla==""){
         $mensaje= "Debe ingresar la contraseña";
     }else{
-        $resultado=$consulta->query("SELECT * FROM tb_usuario where id=$usu and clave=md5('$cla');");
+        $resultado=$consulta->query("SELECT * FROM usuario where idusuario=$usu and clave=md5('$cla');");
         if($resultado->num_rows==1){
             $campos = $resultado->fetch_object();
             session_start();
-            $_SESSION["usuario"]=$campos->id;
+            $_SESSION["usuario"]=$campos->idusuario;
             $_SESSION["nombre"]=$campos->nombre;
             header("location:index.php");
         }
@@ -71,7 +71,7 @@ if(isset($_POST['usuario'])){
 		                                    <?php
 		                                    while ($campos = $resultado->fetch_object()) {
 		                                        ?>
-		                                    <option <?php if ($campos->id==$usu) echo 'selected'; ?> value="<?php echo $campos->id;?>"><?php echo $campos->nombre;?></option>
+		                                    <option <?php if ($campos->idusuario==$usu) echo 'selected'; ?> value="<?php echo $campos->idusuario;?>"><?php echo $campos->nombre;?></option>
 		                                    <?php
 		                                    }
 		                                    ?>

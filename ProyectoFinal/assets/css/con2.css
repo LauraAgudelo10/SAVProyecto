@@ -1,16 +1,13 @@
 .logo{
     position: relative;
     display: inline-block;
-    top: 80%;
-    left: 50%;
+    left: 40%;
     text-align: center;
 }
 
 .cont2{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
+    position: relative;
+    margin-top: 50px;
 }
 
 

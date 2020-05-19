@@ -16,7 +16,7 @@ function guardarUsuario() {
         $con = new Conexion();
         $consulta = $con->conectar();
         $consulta->set_charset("utf8");
-        $sql = "INSERT INTO tb_usuario(`id`,`nombre`,`clave`) VALUES (null,'$nombre',MD5('$clave'))";
+        $sql = "INSERT INTO usuario(`idusuario`,`nombre`,`clave`) VALUES (null,'$nombre',MD5('$clave'))";
         if ($consulta->query($sql) == 1) {
             session_start();
             $_SESSION["logueado"] = TRUE;
