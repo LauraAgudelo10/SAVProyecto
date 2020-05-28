@@ -30,7 +30,7 @@ require_once 'validarSesion.php';
             
             <div class="content-menu">
                 <a href="index.php"><li><span><img src="assets/img/4.png" width="40" height="40" alt=""><h4 class="text1">Inicio</h4></span></li></a>
-                <a href="registrar.php"><li><span><img src="assets/img/1.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
+                <a href="programa.php"><li><span><img src="assets/img/1.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
             </div>
 
 
@@ -83,8 +83,7 @@ require_once 'validarSesion.php';
         </footer>
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.js"></script>
-        <script src="assets/js/material.min.js"></script>
+        <script src="assets/js/script.js"></script>
         <script src="assets/js/funcionesInfoPrograma.js"></script>
     </body>
 </html>

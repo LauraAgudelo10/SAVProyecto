@@ -156,8 +156,6 @@ $res=$consulta->query("SELECT * FROM cadena order by nombreCadena ");
         </script>
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.js"></script>
-        <script src="assets/js/material.min.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/mostrar.js"></script>
         <script src="assets/js/funcionesFicha.js"></script>

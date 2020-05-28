@@ -1,5 +1,12 @@
 
+<?php 
+require_once 'validarSesion.php'; 
+require_once 'conexion.php';
+$con = new Conexion();
+$consulta = $con->conectar();
+$consulta->set_charset("utf8");
 
+?>
 
 <html>
 <head>
@@ -28,7 +35,7 @@
             
             <div class="content-menu">
                 <a href="index.php"><li><span><img src="assets/img/4.png" width="40" height="40" alt=""><h4 class="text1">Inicio</h4></span></li></a>
-                <a href="registrar.php"><li><span><img src="assets/img/2.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
+                <a href="ficha.php"><li><span><img src="assets/img/2.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
             </div>
 
 
@@ -54,10 +61,29 @@
                                                             <th>Teléfono</th>
                                                             <th>Ver</th>
                                                         </tr>
-                                                    </thead>
+                                                    </thead><?php 
+                                                            if (isset($_GET['numeroficha'])) { $sql="SELECT a.identificacion,a.nombre as nombreUsuario ,a.telefono,f.numficha,p.nombre,al.tipoalternativa FROM epractica.aprendiz a 
+                                                                    inner join ficha f on a.idficha = f.idficha 
+                                                                    inner join programasdeformacion p on a.idprograma = p.idprograma 
+                                                                    inner join alternativa al on a.idalternativa = al.idalternativa 
+                                                                    where numficha=".$_GET['numeroficha']; $exe = $consulta->query($sql);
+                                                            while($res = $exe->fetch_object()){
+                                                                echo '<tr>
+                                                                    <td>'.$res->numficha.'</td>
+                                                                    <td>'.$res->nombre.'</td>
+                                                                    <td>'.$res->tipoalternativa.'</td>
+                                                                    <td>'.$res->identificacion.'</td>
+                                                                    <td>'.$res->nombreUsuario.'</td>
+                                                                    <td>'.$res->telefono.'</td>
+                                                                    <td><a href="aprendices?id=">Ver</a></td>
+                                                                  </tr>' ?>
+                                                            <?php 
+                                                        }
+                                                    }else{ ?>
                                                     <tbody id="resultados">
                                                         <!-- Mostramos todos los resultados -->
                                                     </tbody>
+                                                    <?php } ?>
                                                 </table>
                                             </div>      
                                     </form>                         
@@ -75,8 +101,7 @@
         </footer>
         <script src="assets/js/jquery.js"></script>
         <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.js"></script>
-        <script src="assets/js/material.min.js"></script>
+        <script src="assets/js/script.js"></script>
         <script src="assets/js/funcionesInfoFicha.js"></script>
     </body>
 </html>
