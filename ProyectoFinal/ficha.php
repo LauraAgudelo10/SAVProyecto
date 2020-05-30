@@ -4,7 +4,7 @@ require_once 'conexion.php';
 $con = new Conexion();
 $consulta = $con->conectar();
 $consulta->set_charset("utf8");
-
+     
 ?>
 <html>
 <head>
