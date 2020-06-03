@@ -1,4 +1,3 @@
-
 <?php 
 require_once 'validarSesion.php'; 
 require_once 'conexion.php';
@@ -6,6 +5,11 @@ $con = new Conexion();
 $consulta = $con->conectar();
 $consulta->set_charset("utf8");
 
+if (isset($_POST['submit']) && !empty($_POST['submit'])) {
+    $al=$_POST['alternativa'];
+    $id=$_POST['identificación'];
+    $exe= $consulta->query("UPDATE `aprendiz` SET `idalternativa`=$al WHERE `identificacion` =$id");
+}
 ?>
 
 <html>
@@ -53,33 +57,38 @@ $consulta->set_charset("utf8");
                                                 <table class="table">
                                                     <thead class="">
                                                         <tr>
-                                                            <th>Ficha</th>
-                                                            <th>Programa de Formación</th>
-                                                            <th>Alternativa</th>
-                                                            <th>Identificación</th>
-                                                            <th>Nombres y Apellidos</th>
-                                                            <th>Teléfono</th>
-                                                            <th>Ver</th>
+                                                            <th>FICHA</th>
+                                                            <th>PROGRAMA DE FORMACIÓN</th>
+                                                            <th>ALTERNATIVA</th>
+                                                            <th>IDENTIFICACIÓN</th>
+                                                            <th>NOMBRE</th>
+                                                            <th>TELÉFONO</th>
+                                                            <th>Modificar</th>
                                                         </tr>
                                                     </thead><?php 
-                                                            if (isset($_GET['numeroficha'])) { $sql="SELECT a.identificacion,a.nombre as nombreUsuario ,a.telefono,f.numficha,p.nombre,al.tipoalternativa FROM epractica.aprendiz a 
-                                                                    inner join ficha f on a.idficha = f.idficha 
-                                                                    inner join programasdeformacion p on a.idprograma = p.idprograma 
-                                                                    inner join alternativa al on a.idalternativa = al.idalternativa 
-                                                                    where numficha=".$_GET['numeroficha']; $exe = $consulta->query($sql);
-                                                            while($res = $exe->fetch_object()){
+                                                            if (isset($_GET['numeroficha']) && !empty($_GET['numeroficha'])) {
+                                                                 $exe = $consulta->query("select numficha from ficha where numficha =". $_GET['numeroficha']);
+                                                                    $res = $exe->fetch_object();                                                 
+                                                                    if ($res!="") { 
+                                                                    $sql="call epractica.consulta(".$_GET['numeroficha'].", 'f');"; 
+                                                                    $exe = $consulta->query($sql);
+                                                                while($res = $exe->fetch_object()){
                                                                 echo '<tr>
                                                                     <td>'.$res->numficha.'</td>
                                                                     <td>'.$res->nombre.'</td>
                                                                     <td>'.$res->tipoalternativa.'</td>
                                                                     <td>'.$res->identificacion.'</td>
                                                                     <td>'.$res->nombreUsuario.'</td>
-                                                                    <td>'.$res->telefono.'</td>
-                                                                    <td><a href="aprendices?id=">Ver</a></td>
+                                                                    <td style=" width:110px;">'.$res->telefono.'</td>
+                                                                    <td style="background: rgb(189, 226, 170); width:100px; height:30px;"><a href="aprendiz.php?id='.$res->identificacion.'" style="text-decoration:none;"><img src="assets/img/edit.png" width="20" height="20" alt=""></a></td>
                                                                   </tr>' ?>
                                                             <?php 
                                                         }
-                                                    }else{ ?>
+                                                            }else{ ?>
+                                                    <tbody id="resultados">
+                                                        <!-- Mostramos todos los resultados -->
+                                                    </tbody><?php }
+                                                            }else{ ?>
                                                     <tbody id="resultados">
                                                         <!-- Mostramos todos los resultados -->
                                                     </tbody>

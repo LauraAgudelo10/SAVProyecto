@@ -193,7 +193,6 @@ header span:hover{
     display: none;
 }
 
-
 .formulario-header1{
     width: 100%;
     background: white;
@@ -266,8 +265,9 @@ table{
   border: 1px solid green;
 }
 
+
 tr,td {
-  border: green 1px solid;
+    border: green 1px solid;
 }
 
 th{

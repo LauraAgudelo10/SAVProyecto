@@ -16,7 +16,7 @@ $consulta->set_charset("utf8");
 	if ($exe->num_rows>0) {
 		while($res = $exe->fetch_row()){
 			echo '<tr>
-					<td><a href="ficha.php?numeroficha='.$res[2].'"title="ficha">'.$res[2].'</a></td>
+					<td><a href="ficha.php?numeroficha='.$res[2].'"title="ficha" style="text-decoration:none; color:black;">'.$res[2].'</a></td>
 				  </tr>';
 		}
 	}else{

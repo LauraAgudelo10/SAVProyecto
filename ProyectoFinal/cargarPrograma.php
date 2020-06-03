@@ -3,14 +3,16 @@ require_once 'conexion.php';
 $con = new Conexion();
 $consulta = $con->conectar();
 $consulta->set_charset("utf8");
-$res = $consulta->query("SELECT * FROM `programasdeformacion` where idcadena={$_GET['idcadena']} order by nombre");
+
+$res = $consulta->query("SELECT * FROM programasdeformacion where idcadena={$_GET['idcadena']} order by nombre");
+
 $campos = $res->fetch_object()
 ?>
 
 
 <select id="programasdeformacion">
     
-    <option value="<?php if($_GET['idcadena']!=0){ echo $campos->id; }else{ echo "0";}?>">
+    <option value="<?php if($_GET['idcadena']!=0){ echo $campos->idcadena; }else{ echo "0";}?>">
 
     <?php if($_GET['idcadena']!=0){ echo $campos->nombre; 
 
@@ -20,7 +22,7 @@ $campos = $res->fetch_object()
     <?php if ($_GET['idcadena']!=0) {
      while ($campos = $res->fetch_object()) 
     {?>
-     <option value="<?php echo $campos->id; ?>"><?php echo $campos->nombre; ?></option>
+     <option value="<?php echo $campos->idcadena; ?>"><?php echo $campos->nombre; ?></option>
 
     <?php
 

@@ -276,6 +276,7 @@ input{
     padding: 8px;
     border: 1px solid #fff;
     margin-bottom: 5px;
+    text-align: center;
 } 
 .sub-form {
     width: 100%;
@@ -288,12 +289,18 @@ input{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
+    text-align: center;
+}
+h4{
+    position: relative;
+    top: 10%;
 }
 hr{
-    width: 96%;
+    width: 100%;
 }
-.hr1{
-    width: 98%;
+#pro{
+    position: relative;
+    width: 95%;
 }
 .alt{
     position: relative;
@@ -304,10 +311,13 @@ hr{
     width: 33.3%;
 }
 .width-6 {
-    width: 50%;
+    width: 45%;
 }
 .width-12{
     width: 100%;
+}
+.opcion1{
+    visibility: hidden;
 }
 .btn {
     background: green;

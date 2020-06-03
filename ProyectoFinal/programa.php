@@ -30,7 +30,7 @@ require_once 'validarSesion.php';
             
             <div class="content-menu">
                 <a href="index.php"><li><span><img src="assets/img/4.png" width="40" height="40" alt=""><h4 class="text1">Inicio</h4></span></li></a>
-                <a href="programa.php"><li><span><img src="assets/img/1.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
+                <a href="#"><li><span><img src="assets/img/1.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
             </div>
 
 
@@ -48,13 +48,13 @@ require_once 'validarSesion.php';
                                                 <table class="table">
                                                     <thead class="">
                                                         <tr>
-                                                            <th>Ficha</th>
-                                                            <th>Trimestre</th>
-                                                            <th>Inicio de Etapa Lectiva</th>
-                                                            <th>Fin de Etapa Lectiva</th>
-                                                            <th>Inicio de Etapa Productiva</th>
-                                                            <th>Fin de Etapa Productiva</th>
-                                                            <th>Ver</th>
+                                                            <th>FICHA</th>
+                                                            <th>TRIMESTRE</th>
+                                                            <th>INICIO ETAPA LECTIVA</th>
+                                                            <th>FIN ETAPA LECTIVA</th>
+                                                            <th>INICIO ETAPA PRODUCTIVA</th>
+                                                            <th>FIN ETAPA PRODUCTIVA</th>
+                                                            <th>VER</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="resultados">

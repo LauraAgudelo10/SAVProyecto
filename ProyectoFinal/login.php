@@ -75,11 +75,9 @@ if(isset($_POST['usuario'])){
 		                                    <?php
 		                                    }
 		                                    ?>
-                                		</select>   
-                                </div>
-                                <div class="form"> 
-                                	<label>Contraseña</label>
-                                    <input name="clave" type="password" placeholder="Contraseña">
+                                		</select>  
+                                        <label>Contraseña</label>
+                                    <input name="clave" type="password" placeholder="Contraseña"> 
                                 </div>
                                 <button type="submit" class="btn">Iniciar Sesión</button>
                                 <?php

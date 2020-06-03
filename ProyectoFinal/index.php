@@ -118,10 +118,10 @@ $res=$consulta->query("SELECT * FROM cadena order by nombreCadena ");
                             <div class="login-contenedor3">
                                 <h1>APRENDICES</h1>
                                 <div class="login-form3">
-                                    <form action="" method="post">
+                                    <form action="aprendiz.php" method="get">
                                         <div class="form3"> 
-                                            <label>Ingrese documento de aprendiz</label>
-                                            <input name="ficha" type="text" placeholder="#">
+                                            <label name="id">Ingrese documento de aprendiz</label>
+                                            <input name="id" type="number" placeholder="identificacion del aprendiz" required>
                                         </div>
                                         <button type="submit" class="btn3">Buscar</button>
                                     </form>                         
@@ -155,7 +155,6 @@ $res=$consulta->query("SELECT * FROM cadena order by nombreCadena ");
           }
         </script>
         <script src="assets/js/jquery.js"></script>
-        <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/mostrar.js"></script>
         <script src="assets/js/funcionesFicha.js"></script>
