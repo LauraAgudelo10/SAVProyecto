@@ -195,11 +195,10 @@ header span:hover{
 
 .formulario-header1{
     width: 100%;
-    background: white;
     padding: 10px;
     margin: auto;
     border-radius: 3px;
-      border: 1px solid green;
+    border: 1px solid green;
 }
 
 .formulario-header1 h1{
@@ -243,26 +242,34 @@ input{
 }
 
 .cont1{
-    align-items: center;
-    position: relative;
-    margin-top: 15px;
-    margin-left: 50px;
+    background: #fff;
+    color: black;
+    margin-top: 10px;
+    overflow: auto;
+    padding: 0px 15px;
+    width: 1250px;
+    margin: auto;
 }
 
 #div1{
     overflow:scroll;
     height:360px;
-    width:1100px;
+    width:1190px;
  }
  #div1 table{
      width:100%;
      text-align: center;
      background:#fff;
+
 }
 
 table{
   border-collapse: collapse;
   border: 1px solid green;
+  overflow: auto;
+  padding: 0px 15px;
+  width: 1200px;
+  margin: auto;
 }
 
 

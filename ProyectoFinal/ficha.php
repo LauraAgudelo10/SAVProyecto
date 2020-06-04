@@ -74,7 +74,7 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
                                                                     $exe = $consulta->query($sql);
                                                                 while($res = $exe->fetch_object()){
                                                                 echo '<tr>
-                                                                    <td>'.$res->numficha.'</td>
+                                                                    <td style=" width:110px;">'.$res->numficha.'</td>
                                                                     <td>'.$res->nombre.'</td>
                                                                     <td>'.$res->tipoalternativa.'</td>
                                                                     <td>'.$res->identificacion.'</td>
