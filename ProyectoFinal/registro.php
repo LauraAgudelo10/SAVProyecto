@@ -1,37 +1,28 @@
 <?php
 
-function guardarUsuario() {
-    $nombre = $_POST['usuario'];
-    $clave = $_POST['clave'];
-    $mensaje = "";
-    if (trim($nombre) == "") {
-        $mensaje = "Ingrese nombre de usuario  <br>";
-    }
-    if (trim($clave) == "") {
-        $mensaje = "Ingrese clave  <br>";
-    }
+include("conexion.php");
 
-    if ($mensaje == "") {
-        require 'conexion.php';
-        $con = new Conexion();
-        $consulta = $con->conectar();
-        $consulta->set_charset("utf8");
-        $sql = "INSERT INTO usuario(`idusuario`,`nombre`,`clave`) VALUES (null,'$nombre',MD5('$clave'))";
-        if ($consulta->query($sql) == 1) {
-            session_start();
-            $_SESSION["logueado"] = TRUE;
-            $_SESSION["nombre"] = $nombre;
-            header("location:index.php");
-        }else {
-            session_start();
-            $mensaje = "Ya existe un usuario con el mismo nombre:" .$_SESSION["nombre"];
-            header("location:index.php?error=1.php");
+if(ISSET($_POST['register'])){
+    if(strlen ($_POST['usuario']) >=1 && strlen ($_POST['clave']) >=1 ){
+    $nombre = trim($_POST['usuario']);
+    $clave = trim($_POST['clave']);
+    $con = new Conexion();
+    $consulta = $con->conectar();
+    $consulta->set_charset("utf8");
+    $sql = "INSERT INTO usuario(`nombre`,`clave`) VALUES ('$nombre',MD5('$clave'))";
+    $resultado = mysqli_query($consulta, $sql);
+        if($resultado){
+            ?>
+            <h3 class="ok">Registrado correctamente</h3>
+            <?php
+        }else{
+            ?>
+            <h3 class="bad">Ha ocurrido un error</h3>
+            <?php
         }
-    }
+    }else{
+            ?>
+            <h3 class="bad">Completa los campos</h3>
+            <?php
+        }
 }
-
-if ($_POST['accion'] == "REGISTRAR") {
-    guardarUsuario();
-}
-
-

@@ -10,9 +10,6 @@ require_once 'validarSesion.php';
     <title>SAV</title>
     <link rel="stylesheet" href="assets/css/style3.css">
     <link rel="stylesheet" href="assets/icon/style.css">
-    <link rel="stylesheet" href="assets/css/con1.css">
-    <link rel="stylesheet" href="assets/css/con2.css">
-    <link rel="stylesheet" href="assets/css/con3.css">
 
 </head>
     <body>
@@ -42,7 +39,7 @@ require_once 'validarSesion.php';
                         <div class="login-contenedor">
                             <h1>Nuevo Usuario</h1>
                             <div class="login-form">
-                                <form method="post" action="registro.php" >
+                                <form method="POST" >
                                     <div class="form">
                                         <label>Usuario</label>
                                             <input name="usuario" type="text" placeholder="Escriba nombre completo de usuario">
@@ -51,8 +48,11 @@ require_once 'validarSesion.php';
                                         <label>Contraseña</label>
                                         <input name="clave" type="password" placeholder="Contraseña">
                                     </div>
-                                    <input type="submit" value="REGISTRAR" name="accion" class="btn">
-                                </form>                         
+                                    <input type="submit" name="register" class="btn">
+                                </form> 
+                                <?php
+                                include("registro.php");
+                                ?>                       
                             </div>
                         </div>
                     </section>

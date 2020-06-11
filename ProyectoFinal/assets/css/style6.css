@@ -103,7 +103,7 @@ header span:hover{
 }
 
 .content-menu li{
-    height: 50%;
+    height: 100%;
     list-style: none;
     padding: 20px;
     text-align: center;
@@ -126,7 +126,7 @@ header span:hover{
 }
 
 .content-menu li img{
-    margin-top: 150%;
+    margin-top: 300%;
 }
 
 .content-menu li h4{
@@ -140,11 +140,6 @@ header span:hover{
 .content-menu:hover .text1{
     transform: translateX(0px);
     transition: all 100ms;
-}
-
-.content-menu:hover .text2{
-    transform: translateX(0px);
-    transition: all 200ms;
 }
 
 .article{

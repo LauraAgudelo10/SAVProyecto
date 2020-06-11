@@ -206,6 +206,23 @@ header span:hover{
     text-transform: uppercase;
 }
 
+.ok{
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color:  rgba(189, 226, 170);
+    color: green;
+    font-size: 12px;
+}
+.bad{
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color:  rgba(254, 205, 153);
+    color: black;
+    font-size: 12px;
+}
+
 footer{
     background: #fff;
     padding: 15px 0 15px 0;

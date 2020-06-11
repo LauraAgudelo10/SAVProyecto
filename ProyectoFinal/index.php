@@ -103,6 +103,7 @@ $res=$consulta->query("SELECT * FROM cadena order by nombreCadena ");
                                                     <option value="0">Seleccione una cadena para continuar</option>
                                                 </select>
                                                 <button type="submit" class="btn2" disabled>Buscar</button>
+                                                
                                             </div>   
                                         </div>
                                     </form>                         

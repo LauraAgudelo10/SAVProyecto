@@ -28,7 +28,7 @@ inner join alternativa al on a.idalternativa = al.idalternativa WHERE identifica
                      <td>'.$res->identificacion.'</td>
                      <td>'.$res->nombreUsuario.'</td>
                     <td>'.$res->telefono.'</td>
-                    <td><a href="aprendices?id=">B</a><td>
+                    <td style="background: rgb(189, 226, 170); width:100px; height:30px;"><a href="aprendiz.php?id='.$res->identificacion.'" style="text-decoration:none;"><img src="assets/img/edit.png" width="20" height="20" alt=""></a></td>
                    </tr>';
 		}
 	}else{

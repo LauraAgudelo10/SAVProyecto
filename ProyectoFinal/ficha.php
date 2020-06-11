@@ -11,7 +11,6 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
     $exe= $consulta->query("UPDATE `aprendiz` SET `idalternativa`=$al WHERE `identificacion` =$id");
 }
 ?>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -39,7 +38,6 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
             
             <div class="content-menu">
                 <a href="index.php"><li><span><img src="assets/img/4.png" width="40" height="40" alt=""><h4 class="text1">Inicio</h4></span></li></a>
-                <a href="ficha.php"><li><span><img src="assets/img/2.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
             </div>
 
 
@@ -83,7 +81,7 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
                                                                     <td style="background: rgb(189, 226, 170); width:100px; height:30px;"><a href="aprendiz.php?id='.$res->identificacion.'" style="text-decoration:none;"><img src="assets/img/edit.png" width="20" height="20" alt=""></a></td>
                                                                   </tr>' ?>
                                                             <?php 
-                                                        }
+                                                                    }
                                                             }else{ ?>
                                                     <tbody id="resultados">
                                                         <!-- Mostramos todos los resultados -->
@@ -95,7 +93,7 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
                                                     <?php } ?>
                                                 </table>
                                             </div>      
-                                    </form>                         
+                                    </form>                        
                                 </div>
                             </div>
                         </section>       

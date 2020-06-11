@@ -1,8 +1,10 @@
 <?php
-require_once 'validarSesion.php';  
+require_once 'validarSesion.php'; 
+require_once 'conexion.php';
+$con = new Conexion();
+$consulta = $con->conectar();
+$consulta->set_charset("utf8");
 ?>
-
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -30,7 +32,6 @@ require_once 'validarSesion.php';
             
             <div class="content-menu">
                 <a href="index.php"><li><span><img src="assets/img/4.png" width="40" height="40" alt=""><h4 class="text1">Inicio</h4></span></li></a>
-                <a href="#"><li><span><img src="assets/img/1.png" width="50" height="38" alt=""><h4 class="text5">Registrar</h4></span></li></a>
             </div>
 
 
@@ -56,10 +57,34 @@ require_once 'validarSesion.php';
                                                             <th>FIN ETAPA PRODUCTIVA</th>
                                                             <th>VER</th>
                                                         </tr>
-                                                    </thead>
-                                                    <tbody id="resultados">
+                                                    </thead><?php
+                                                    if (isset($_GET['programa']) && !empty($_GET['programa'])) {
+                                                                $exe = $consulta->query("select nombre from programasdeformacion where idprograma =". $_GET['programa']);
+	                                                                $res = $exe->fetch_object();
+	                                                                if ($res!="") { 
+                                                                    $sql="call epractica.consulta(".$_GET['programa'].", 'p');"; 
+                                                                    $exe = $consulta->query($sql);
+                                                                while($res = $exe->fetch_row()){
+                                                                echo '<tr>
+                                                                    <td>'.$res->numficha.'</td>
+                                                                    <td>'.$res[3].'</td>
+                                                                    <td>'.$res[4].'</td>
+                                                                    <td>'.$res[5].'</td>
+                                                                    <td>'.$res[6].'</td>
+                                                                    <td>'.$res[7].'</td>
+                                                                    <td style="background: rgb(189, 226, 170); width:100px; height:30px;"><a href="ficha.php?numeroficha='.$res->numficha.'"><img src="assets/img/ver.png" width="20" height="20" alt=""></a></td>
+                                                                  </tr>'; ?>
+                                                            <?php 
+                                                                         }
+                                                                     }else{ ?>
+                                                                <tbody id="resultados">
+                                                                        <!-- Mostramos todos los resultados -->
+                                                                </tbody><?php }
+                                                            } else{ ?>
+                                                        <tbody id="resultados">
                                                         <!-- Mostramos todos los resultados -->
                                                     </tbody>
+                                                    <?php } ?>
                                                 </table>
                                             </div>      
                                     </form>                         
@@ -68,12 +93,6 @@ require_once 'validarSesion.php';
                         </section>       
                     </div>
                 </section>
-
-
-             
-
-             
-
         </main>
         <footer class="footer">
             <div class="contenedor-footer">

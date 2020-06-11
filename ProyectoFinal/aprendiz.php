@@ -46,7 +46,6 @@ $res = $exe->fetch_object();
             
             <div class="content-menu">
                 <a href="index.php"><li><span><img src="assets/img/4.png" width="40" height="40" alt=""><h4 class="text1">Inicio</h4></span></li></a>
-                <a href="aprendiz.php"><li><span><img src="assets/img/3.png" width="50" height="38" alt=""><h4 class="text5">Aprendiz</h4></span></li></a>
             </div>
 
              

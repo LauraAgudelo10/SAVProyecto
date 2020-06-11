@@ -84,10 +84,8 @@ if(isset($_POST['usuario'])){
 		                        if($mensaje!=""){
 		                         
 		                        ?>
-		                        <br>
-		                        <br>
-		                        <div class="form-group">
-		                            <label style="color: red"><?php echo $mensaje;?></label>
+		                        <div class="form-group" style="text-align: center;width: 100%;padding: 12px;background-color:rgba(254, 205, 153);font-size: 12px;">
+		                            <label style="color: red;"><?php echo $mensaje;?></label>
 		                        </div>
 		                      <?php
 		                       }

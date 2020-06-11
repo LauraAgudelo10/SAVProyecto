@@ -24,7 +24,7 @@ $consulta->set_charset("utf8");
 				  	<td>'.$res[5].'</td>
 				  	<td>'.$res[6].'</td>
 				  	<td>'.$res[7].'</td>
-				  	<td style="background: rgb(189, 226, 170); width:100px; height:30px;><a href="ficha?id=" style="text-decoration:none;><img src="assets/img/ver.png" width="20" height="20" alt=""></a><td>
+				  	<td style="background: rgb(189, 226, 170); width:100px; height:30px;"><a href="ficha.php?numeroficha='.$res[2].'"><img src="assets/img/ver.png" width="20" height="20" alt=""></a></td>
 				  </tr>';
 		}
 	}else{
