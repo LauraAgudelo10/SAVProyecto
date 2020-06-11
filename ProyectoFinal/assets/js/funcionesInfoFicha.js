@@ -1,7 +1,9 @@
 $(infoFicha());
 
 function infoFicha(parametro){
-
+	var ficha = document.getElementById("variable").value;
+	var parametro = parametro +'&ficha='+ficha;
+	
 $.ajax({
 		url: '../ProyectoFinal/infoficha.php',
 		type: 'POST',

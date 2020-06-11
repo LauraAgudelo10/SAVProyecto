@@ -11,10 +11,11 @@ inner join alternativa al on a.idalternativa = al.idalternativa ";
 
 	if(isset($_POST['info'])){
 		$info = $consulta->real_escape_string($_POST['info']);
+		$ficha = $_POST['ficha'];
 		$sql = "SELECT a.identificacion,a.nombre as nombreUsuario,a.telefono,f.numficha,p.nombre,al.tipoalternativa FROM epractica.aprendiz a 
 inner join ficha f on a.idficha = f.idficha 
 inner join programasdeformacion p on a.idprograma = p.idprograma 
-inner join alternativa al on a.idalternativa = al.idalternativa WHERE identificacion LIKE '%".$info."%'";
+inner join alternativa al on a.idalternativa = al.idalternativa WHERE identificacion LIKE '%".$info."%' AND f.idficha = '".$ficha."'";
 	}
 
 	$exe = $consulta->query($sql);

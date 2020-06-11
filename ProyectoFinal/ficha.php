@@ -65,6 +65,8 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
                                                         </tr>
                                                     </thead><?php 
                                                             if (isset($_GET['numeroficha']) && !empty($_GET['numeroficha'])) {
+                                                                echo '
+                                                                    <input type="hidden" id="variable" value="'.$_GET['numeroficha'].'">';
                                                                  $exe = $consulta->query("select numficha from ficha where numficha =". $_GET['numeroficha']);
                                                                     $res = $exe->fetch_object();                                                 
                                                                     if ($res!="") { 
@@ -72,6 +74,7 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
                                                                     $exe = $consulta->query($sql);
                                                                 while($res = $exe->fetch_object()){
                                                                 echo '<tr>
+
                                                                     <td style=" width:110px;">'.$res->numficha.'</td>
                                                                     <td>'.$res->nombre.'</td>
                                                                     <td>'.$res->tipoalternativa.'</td>
