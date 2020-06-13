@@ -1,0 +1,44 @@
+.con1{
+
+}
+
+.formulario-header1{
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 2px 8px 30px  #878787;
+}
+
+.formulario-header1 h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+.form1, select, input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.formulario-header1 .btn1{
+    width: 100%;
+    background: green;
+    border: none;
+    padding: 12px;
+    color: wheat;
+    margin: 16px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.formulario-header1 label{
+    color: #878787;
+    text-transform: uppercase;
+}
+
+

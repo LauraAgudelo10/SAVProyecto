@@ -1,0 +1,50 @@
+
+.cont3{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+
+.formulario-header3{
+    width: 400px;
+    background: white;
+    padding: 10px;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 2px 8px 30px  #878787;
+}
+
+.formulario-header3 h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+.form3, select, input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.formulario-header3 .btn3{
+    width: 100%;
+    background: green;
+    border: none;
+    padding: 12px;
+    color: wheat;
+    margin: 16px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.formulario-header3 label{
+    color: #878787;
+    text-transform: uppercase;
+}
+
+
