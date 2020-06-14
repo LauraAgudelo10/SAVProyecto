@@ -1,0 +1,7 @@
+verficha
+-.-------------------------------------------
+CREATE ALGORITHM=UNDEFINED DEFINER=`` SQL SECURITY DEFINER VIEW `epractica`.`verficha` AS select `a`.`identificacion` AS `identificacion`,`a`.`nombre` AS `nombreUsuario`,`a`.`telefono` AS `telefono`,`f`.`numficha` AS `numficha`,`p`.`nombre` AS `nombre`,`al`.`tipoalternativa` AS `tipoalternativa` from (((`epractica`.`aprendiz` `a` join `epractica`.`ficha` `f` on(`a`.`idficha` = `f`.`idficha`)) join `epractica`.`programasdeformacion` `p` on(`a`.`idprograma` = `p`.`idprograma`)) join `epractica`.`alternativa` `al` on(`a`.`idalternativa` = `al`.`idalternativa`))
+-----------------------------------------------------
+verprograma
+-------------------------------------------------------
+CREATE ALGORITHM=UNDEFINED DEFINER=`` SQL SECURITY DEFINER VIEW `epractica`.`verprograma` AS select `f`.`idficha` AS `idficha`,`p`.`nombre` AS `nombre`,`f`.`numficha` AS `numficha`,`f`.`trimestre` AS `trimestre`,`f`.`inicioetapalectiva` AS `inicioetapalectiva`,`f`.`finetapalectiva` AS `finetapalectiva`,`f`.`inicioetapaproductiva` AS `inicioetapaproductiva`,`f`.`finetapaproductiva` AS `finetapaproductiva` from (`epractica`.`ficha` `f` join `epractica`.`programasdeformacion` `p` on(`f`.`idprograma` = `p`.`idprograma`))
