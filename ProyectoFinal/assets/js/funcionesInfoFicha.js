@@ -2,16 +2,14 @@ $(infoFicha());
 
 function infoFicha(parametro){
 	var ficha = document.getElementById("variable").value;
-	var parametro = parametro +'&ficha='+ficha;
-	
+	//var parametro = parametro +'&ficha='+ficha;
 $.ajax({
 		url: '../ProyectoFinal/infoficha.php',
 		type: 'POST',
-		data: { info: parametro },
+		data: { info: parametro, fichas : ficha },
 	})
 	.done(function(tabla){
 		$('#resultados').html(tabla);
-		console.log(tabla);
 	})
 }
 

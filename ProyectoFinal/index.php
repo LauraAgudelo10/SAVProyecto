@@ -18,6 +18,7 @@ $res=$consulta->query("SELECT * FROM cadena order by nombreCadena ");
     <link rel="stylesheet" href="assets/css/con1.css">
     <link rel="stylesheet" href="assets/css/con2.css">
     <link rel="stylesheet" href="assets/css/con3.css">
+    <link rel="shortcut icon" href="assets/img/logosena.png">
 </head>
     <body>
         <header>
@@ -86,7 +87,7 @@ $res=$consulta->query("SELECT * FROM cadena order by nombreCadena ");
                                     <form action="programa.php" method="post">
                                         <div class="form2"> 
                                             <label>Elija un programa de formación</label>
-                                            <select name="usuario" id="pais" onchange="cargarProgramas(this.value)">
+                                            <select  onchange="cargarProgramas(this.value)">
                                                 <option value="0" required>Seleccione una cadena de formación</option>
                                                 
                                                 <?php

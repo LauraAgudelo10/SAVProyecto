@@ -39,6 +39,7 @@ if(isset($_POST['usuario'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SAV</title>
     <link rel="stylesheet" href="assets/css/style1.css">
+    <link rel="shortcut icon" href="assets/img/logosena.png">
 </head>
     
 <body>

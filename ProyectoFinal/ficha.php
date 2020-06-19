@@ -11,6 +11,7 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
     $exe= $consulta->query("UPDATE `aprendiz` SET `idalternativa`=$al WHERE `identificacion` =$id");
 }
 ?>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -19,6 +20,7 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
     <title>SAV</title>
     <link rel="stylesheet" href="assets/css/style5.css">
     <link rel="stylesheet" href="assets/icon/style.css">
+    <link rel="shortcut icon" href="assets/img/logosena.png">
 
 </head>
     <body>
@@ -63,33 +65,21 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
                                                             <th>TELÉFONO</th>
                                                             <th>Modificar</th>
                                                         </tr>
-                                                    </thead><?php 
-                                                            if (isset($_GET['numeroficha']) && !empty($_GET['numeroficha'])) {
-                                                                echo '
-                                                                    <input type="hidden" id="variable" value="'.$_GET['numeroficha'].'">';
+                                                    </thead><?php
+                                                            if (isset($_GET['numeroficha']) && !empty($_GET['numeroficha'])){
                                                                  $exe = $consulta->query("select numficha from ficha where numficha =". $_GET['numeroficha']);
-                                                                    $res = $exe->fetch_object();                                                 
-                                                                    if ($res!="") { 
-                                                                    $sql="call epractica.consulta(".$_GET['numeroficha'].", 'f');"; 
-                                                                    $exe = $consulta->query($sql);
-                                                                while($res = $exe->fetch_object()){
-                                                                echo '<tr>
-
-                                                                    <td style=" width:110px;">'.$res->numficha.'</td>
-                                                                    <td>'.$res->nombre.'</td>
-                                                                    <td>'.$res->tipoalternativa.'</td>
-                                                                    <td>'.$res->identificacion.'</td>
-                                                                    <td>'.$res->nombreUsuario.'</td>
-                                                                    <td style=" width:110px;">'.$res->telefono.'</td>
-                                                                    <td style="background: rgb(189, 226, 170); width:100px; height:30px;"><a href="aprendiz.php?id='.$res->identificacion.'" style="text-decoration:none;"><img src="assets/img/edit.png" width="20" height="20" alt=""></a></td>
-                                                                  </tr>' ?>
-                                                            <?php 
-                                                                    }
-                                                            }else{ ?>
-                                                    <tbody id="resultados">
+                                                                                                                   
+                                                                    if ($exe->num_rows>0){
+                                                                     echo '<input type="hidden" id="variable" value="'.$_GET['numeroficha'].'">'; ?>
+                                                                           <tbody id="resultados">
+                                                                                <!-- Mostramos todos los resultados -->
+                                                                           </tbody>
+                                                            <?php }else{ echo '<input type="hidden" id="variable" value="0">'; ?>
+                                                                        <tbody id="resultados">
                                                         <!-- Mostramos todos los resultados -->
-                                                    </tbody><?php }
-                                                            }else{ ?>
+                                                    </tbody>
+                                                        <?php } ?>
+                                                    <?php }else{ echo '<input type="hidden" id="variable" value="0">'; ?>
                                                     <tbody id="resultados">
                                                         <!-- Mostramos todos los resultados -->
                                                     </tbody>
@@ -102,6 +92,7 @@ if (isset($_POST['submit']) && !empty($_POST['submit'])) {
                         </section>       
                     </div>
                 </section>
+
         </main>
         <footer class="footer">
             <div class="contenedor-footer">

@@ -10,6 +10,7 @@ require_once 'validarSesion.php';
     <title>SAV</title>
     <link rel="stylesheet" href="assets/css/style3.css">
     <link rel="stylesheet" href="assets/icon/style.css">
+    <link rel="shortcut icon" href="assets/img/logosena.png">
 
 </head>
     <body>
@@ -29,7 +30,6 @@ require_once 'validarSesion.php';
             
             <div class="content-menu">
                 <a href="index.php"><li><span><img src="assets/img/4.png" width="40" height="40" alt=""><h4 class="text1">Inicio</h4></span></li></a>
-                <a href="registrar.php"><li><span><img src="assets/img/5.png" width="50" height="50" alt=""><h4 class="text2">Registrar</h4></span></li></a>
             </div>
 
 

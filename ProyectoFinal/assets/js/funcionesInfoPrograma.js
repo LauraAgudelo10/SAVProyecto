@@ -1,15 +1,14 @@
 $(infoPrograma());
 
 function infoPrograma(parametro){
-
+var programa = document.getElementById("variable").value;
 	$.ajax({
 		url: '../ProyectoFinal/infoprograma.php',
 		type: 'POST',
-		data: { info: parametro },
+		data: { info: parametro, programas : programa },
 	})
 	.done(function(tabla){
 		$('#resultados').html(tabla);
-		console.log(tabla);
 	})
 }
 

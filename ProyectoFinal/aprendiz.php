@@ -27,6 +27,7 @@ $res = $exe->fetch_object();
     <title>SAV</title>
     <link rel="stylesheet" href="assets/css/style6.css">
     <link rel="stylesheet" href="assets/icon/style.css">
+    <link rel="shortcut icon" href="assets/img/logosena.png">
 
 </head>
     <body>

@@ -6,9 +6,9 @@ $consulta->set_charset("utf8");
 
 	$sql = "SELECT * FROM ficha";
 
-	if (isset($_POST['dato'])){
-		$dato = $consulta->real_escape_string($_POST['dato']);
-		$sql = "SELECT * FROM ficha WHERE numficha LIKE '%".$dato."%'";
+	if (isset($_POST['info'])){
+		$info = $consulta->real_escape_string($_POST['info']);
+		$sql = "SELECT * FROM ficha WHERE numficha LIKE '%".$info."%'";
 	}
 
 	$exe = $consulta->query($sql);

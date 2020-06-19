@@ -86,6 +86,7 @@ header span:hover{
 }
 
 
+
 .content-menu{
     width: 100px;
     background: #EDEFEC;
@@ -98,7 +99,7 @@ header span:hover{
 }
 
 .content-menu li{
-    height: 50%;
+    height: 100%;
     list-style: none;
     padding: 20px;
     text-align: center;
@@ -121,7 +122,7 @@ header span:hover{
 }
 
 .content-menu li img{
-    margin-top: 150%;
+    margin-top: 300%;
 }
 
 .content-menu li h4{
@@ -135,11 +136,6 @@ header span:hover{
 .content-menu:hover .text1{
     transform: translateX(0px);
     transition: all 100ms;
-}
-
-.content-menu:hover .text2{
-    transform: translateX(0px);
-    transition: all 200ms;
 }
 
 
@@ -247,6 +243,7 @@ footer{
     padding-bottom: 5px;
     margin-bottom: 10px;
     text-align: center;
+    font-weight : bold;
 }
 
 .titulo-final{
@@ -254,6 +251,7 @@ footer{
     font-size: 10px;
     margin: 20px 0 0 0;
     color: black;
+    font-weight : bold;
 }
 
 
